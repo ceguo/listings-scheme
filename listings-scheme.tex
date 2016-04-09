@@ -1,0 +1,73 @@
+% Copyright 2015 Ce Guo <ce.guo@yahoo.com>
+
+% This program is free software: you can redistribute it and/or modify
+% it under the terms of the GNU General Public License as published by
+% the Free Software Foundation, either version 3 of the License, or
+% (at your option) any later version.
+
+% This program is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+% GNU General Public License for more details.
+
+% You should have received a copy of the GNU General Public License
+% along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+\definecolor{scheme-primitive}{rgb}{0, 0, 1}
+\definecolor{scheme-derived}{rgb}{0, 0, 1}
+\definecolor{scheme-comment}{rgb}{0, 0.5, 0}
+\definecolor{scheme-bracket}{rgb}{0.6, 0.6, 0.6}
+
+\lstdefinelanguage{Scheme}{
+    basicstyle=\small\ttfamily,
+    sensitive=true,
+    morestring = [b]",
+    stringstyle=\color{red},
+    morecomment=[l]{;},
+    commentstyle=\color{scheme-comment},
+    literate=
+            *{(}{{\textcolor{scheme-bracket}{(}}}{1}
+            {)}{{\textcolor{scheme-bracket}{)}}}{1},
+    classoffset=0,
+    morekeywords={
+        lambda,
+        if,
+        quote,
+        set!},
+    keywordstyle=\color{scheme-primitive},
+    classoffset=1,
+    morekeywords={
+        cond,
+        else,
+        case,
+        and,
+        or,
+        when,
+        unless,
+        cond-expand,
+        let,
+        let*,
+        letrec,
+        letrec*
+        let-values,
+        let*-values,
+        begin,
+        do,
+        delay,
+        delay-force,
+        force,
+        promise?,
+        make-promise,
+        make-parameter,
+        parameterize,
+        guard,
+        quasiquote,
+        case-lambda,
+        let-syntax,
+        letrec-syntax,
+        syntax-rules,
+        define,
+        map},
+    keywordstyle=\color{scheme-derived},
+    classoffset=0
+}
